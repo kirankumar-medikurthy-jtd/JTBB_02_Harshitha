@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic table</title>
+    <style>
+        .grid{
+            width:100%;
+            display: grid;
+            /* background-color: aqua; */
+            grid-template-columns: repeat(9,60px);
+            grid-template-rows: 55px;
+            justify-content: center;
+            margin-top: 200px;
+        }
+        .grid>div{
+            border: solid 2px black;
+            width: 40px;
+            height: 40px;
+            margin-top: 10px;
+            background-color: blue;
+        }
+        .div1>div{
+            border: solid 2px black;
+            width: 40px;
+            height: 40px;
+            margin-top: 10px;
+            margin-left: 155px;
+        }
+        .div1{
+            display: grid;
+            grid-template-columns: repeat(2,60px);
+            grid-template-rows: 55px;
+            margin-top: -376px;
+         }
+        .div1>div:nth-child(2){
+            border: none;
+        }
+        .div1>div:nth-child(3){
+            background-color:#8bc34a;
+        }
+        .div1>div:nth-child(5){
+            background-color:#8bc34a;
+        }
+        .div1>div:nth-child(7){
+            background-color:#8bc34a;
+        }
+        .div1>div:nth-child(9){
+            background-color:#8bc34a;
+        }
+        .div1>div:nth-child(11){
+            background-color:#8bc34a;
+        }
+        .div1>div:nth-child(13){
+            background-color:#8bc34a;
+        }
+        .div1>div:nth-child(4){
+            background-color:#ef5350;
+            text-align: center;
+        }
+        .div1>div:nth-child(6){
+            background-color:#ef5350;
+            text-align: center;
+        }
+        .div1>div:nth-child(8){
+            background-color:#ef5350;
+            text-align: center; 
+        }
+        .div1>div:nth-child(10){
+            background-color:#ef5350;
+            text-align: center; 
+        }
+        .div1>div:nth-child(12){
+            background-color:#ef5350;
+            text-align: center;
+        } 
+        .div1>div:nth-child(14){
+            background-color:#ef5350;
+            text-align: center;
+        }
+        .div1>div:nth-child(1){
+            background-color: #b71c1c;
+            color: white;
+            font-size: 30px;
+            text-align: center;
+        }
+        .hello{
+            display: grid;
+            width: 100%;
+            
+            grid-template-columns: repeat(1,100px);
+            /* grid-template-rows: 50px; */
+            margin-left: 130px;
+            margin-top: -110px;
+            
+        }
+        .hello>div{
+           border: solid 2px black;
+            width: 40px;
+            height: 40px;
+            margin-top: 10px;
+            background-color:#fff9c4;
+            margin-left: 145px;
+        }
+        .hi{
+            display: grid;
+            grid-template-columns: repeat(5,60px);
+            grid-template-rows: 60px;
+            margin-left: 878px;
+            margin-top: -330px;
+        }
+        .hi>div{
+            width: 40px;
+            height: 40px;
+            border: solid 2px black;
+            margin-top: 10px;
+        }
+        .div2{
+            display: grid;
+            grid-template-columns: repeat(1,200px);
+            margin-top: -378px;
+        }
+        .div2>div{
+            border: solid 2px black;
+            width: 40px;
+            height: 40px;
+            margin-top: 10px;
+            margin-left: 1175px;
+        }
+        .div3{
+            display: grid;
+            grid-template-columns: repeat(14,41px);
+            grid-template-rows: 40px;
+            margin-top: 80px;
+            justify-content: center;
+        }
+        .div3>div{
+            border: solid 1px black;
+            width: 40px;
+            height: 40px;
+
+        }
+        .you>div{
+            width: 130px;
+            height: 90px;
+            border: solid 2px black;
+            margin-top: -480px;
+            margin-left: 340px;
+            font-size:40px;
+            background-color:#8bc34a ;
+            text-align: center;
+        }
+        .div3>div:nth-child(1){
+            background-color:#33691e;
+            color: white;
+        }
+        .div3>div:nth-child(2){
+            background-color:#33691e;
+        }
+        .div3>div:nth-child(3){
+            background-color:#33691e; 
+        }
+        .div3>div:nth-child(4){
+            background-color:#33691e; 
+        }
+        .div3>div:nth-child(5){
+            background-color:#33691e; 
+        }
+        .div3>div:nth-child(6){
+            background-color:#33691e; 
+        }
+        .div3>div:nth-child(7){
+            background-color:#33691e; 
+        }
+        .div3>div:nth-child(8){
+            background-color:#33691e; 
+        }
+        .div3>div:nth-child(9){
+            background-color:#33691e; 
+        }
+        .div3>div:nth-child(10){
+            background-color:#33691e; 
+        }
+        .div3>div:nth-child(11){
+            background-color:#33691e; 
+        }
+        .div3>div:nth-child(12){
+            background-color:#33691e; 
+        }
+        .div3>div:nth-child(13){
+            background-color:#33691e; 
+        }
+        .div3>div:nth-child(14){
+            background-color:#33691e; 
+        }
+        .div3>div:nth-child(15){
+            background-color:#7cb342; 
+        }
+        .div3>div:nth-child(16){
+            background-color:#7cb342; 
+        }
+        .div3>div:nth-child(17){
+            background-color:#7cb342; 
+        }
+        .div3>div:nth-child(18){
+            background-color:#7cb342; 
+        }
+        .div3>div:nth-child(19){
+            background-color:#7cb342; 
+        }
+        .div3>div:nth-child(20){
+            background-color:#7cb342; 
+        }
+        .div3>div:nth-child(21){
+            background-color:#7cb342;
+            color: white; 
+        }
+        .div3>div:nth-child(22){
+            background-color:#7cb342; 
+        }
+        .div3>div:nth-child(23){
+            background-color:#7cb342; 
+        }
+        .div3>div:nth-child(24){
+            background-color:#7cb342; 
+        }
+        .div3>div:nth-child(25){
+            background-color:#7cb342; 
+        }
+        .div3>div:nth-child(26){
+            background-color:#7cb342; 
+        }
+        .div3>div:nth-child(27){
+            background-color:#7cb342; 
+        }
+        .div3>div:nth-child(28){
+            background-color:#7cb342; 
+            color: white;
+        }
+        .div2>div:nth-child(1){
+            background-color:#fdd835 ;
+        }
+        .div2>div:nth-child(2){
+            background-color:#fdd835 ;
+        }
+        .div2>div:nth-child(3){
+            background-color:#fdd835 ;
+        }
+        .div2>div:nth-child(4){
+            background-color:#fdd835 ;
+        }
+        .div2>div:nth-child(5){
+            background-color:#fdd835 ;
+        }
+        .div2>div:nth-child(6){
+            background-color:#fdd835 ;
+        }
+        .div2>div:nth-child(7){
+            background-color:#8d6e63;
+        }
+        .hi>div:nth-child(1){
+            background-color:#ab47bc;
+        }
+        .hi>div:nth-child(2){
+            background-color:#43a047;
+        }
+        .hi>div:nth-child(3){
+            background-color:#43a047;
+        }
+        .hi>div:nth-child(4){
+            background-color:#43a047;
+        }
+        .hi>div:nth-child(5){
+            background-color:#e91e63;
+        }
+        .hi>div:nth-child(6){
+            background-color:#ff5722;
+        }
+        .hi>div:nth-child(7){
+            background-color:#ab47bc;
+        }
+        .hi>div:nth-child(8){
+            background-color:#43a047;
+        }
+        .hi>div:nth-child(9){
+            background-color:#43a047;
+        }
+        .hi>div:nth-child(10){
+            background-color:#e91e63;
+        }
+        .hi>div:nth-child(11){
+            background-color:#ff5722;
+        }
+        .hi>div:nth-child(12){
+            background-color:#ab47bc;
+        }
+        .hi>div:nth-child(13){
+            background-color:#ab47bc;
+        }
+        .hi>div:nth-child(14){
+            background-color:#43a047;
+        }
+        .hi>div:nth-child(15){
+            background-color:#e91e63;
+        }
+        .hi>div:nth-child(16){
+            background-color:#ff5722;
+        }
+        .hi>div:nth-child(17){
+            background-color:#ff5722;
+        }
+        .hi>div:nth-child(18){
+            background-color:#ab47bc;
+        }
+        .hi>div:nth-child(19){
+            background-color:#ab47bc;
+        }
+        .hi>div:nth-child(20){
+            background-color:#e91e63;
+        }
+        .hi>div:nth-child(21){
+            background-color:#ff5722;
+        }
+        .hi>div:nth-child(22){
+            background-color:#ff5722;
+        }
+        .hi>div:nth-child(23){
+            background-color:#ff5722;
+        }
+        .hi>div:nth-child(24){
+            background-color:#ab47bc;
+        }
+        .hi>div:nth-child(25){
+            background-color:#e91e63;
+        }
+        .hi>div:nth-child(26){
+            background-color:#8d6e63;
+        }
+        .hi>div:nth-child(27){
+            background-color:#8d6e63;
+        }
+        .hi>div:nth-child(28){
+            background-color:#8d6e63;
+        }
+        .hi>div:nth-child(29){
+            background-color:#8d6e63;
+        }
+        .hi>div:nth-child(30){
+            background-color:#8d6e63;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="div1">
+        <div>H</div>
+        <div></div>
+        <div></div>
+        <div>4</div>
+        <div></div>
+        <div>12</div>
+        <div></div>
+        <div>20</div>
+        <div></div>
+        <div>38</div>
+        <div></div>
+        <div>56</div>
+        <div></div>
+        <div>88</div>
+    </div>
+    <div class="hello">
+        <div></div>
+        <div></div>
+    </div>
+    <div class="hi">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="div2">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="div3">
+        <div>La</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>AM</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>No</div>
+    </div>
+    <div class="you">
+        <div>Si</div>
+    </div>
+</body>
+</html>
+
