@@ -1,0 +1,99 @@
+<html>
+   <head>
+      <title>taking details of a form</title>
+      <style>
+        h2{
+          color:firebrick;
+          text-align:center;
+          }
+      .margin{
+          margin-top:20px;
+         }
+      .view{
+        text-align:center;
+         }
+       .padding{
+           padding:10px 100px 10px 20px;
+           border:solid 2px black;
+           }
+       .padding1{
+            background-color:firebrick;
+            color:white;
+            border:2px solid firebrick;
+            padding:5px 140px 5px 140px;
+            margin-top:10px;
+         }
+       .details{
+          border:2px solid firebrick;
+          padding:5px 140px 5px 140px;
+          display:flex;
+          text-align:center;
+            
+         }
+       .display{
+           display:flex;
+           margin:auto;
+           text-align:center;
+           margin-left:770px;
+           margin-top:30px;
+         }
+       .padding2{
+           padding:10px 100px 10px 20px;
+           border:solid 2px black;
+           }
+          
+      
+      </style>
+   </head>
+   <body>
+      <h2>Enter the Details</h2>
+      <div class="view">
+         <div>
+            <input class="padding" type="text" placeholder="Enter your name"/>
+         </div>
+         <div class="margin">
+            <input class="padding2" type="number" placeholder="Enter your phone number"/>
+         </div>
+         <button class="padding1">Create</button>
+         <div class="appende"></div>
+      </div>
+   </body>
+   
+   <script>
+    	let create=document.querySelector(".padding1");
+    
+      	create.onclick=function(){
+      
+      	let name=document.querySelector(".padding").value;
+      
+      	let number=document.querySelector(".padding2").value;
+      	
+      	let detail=document.createElement("div");
+      
+         let userName=document.createElement("div");
+         userName.style.margin="20px 20px";
+         
+         let mobileNumber=document.createElement("div");
+         mobileNumber.style.margin="20px 20px";
+         
+         
+         userName.textContent="Name:"+ name;
+         
+         mobileNumber.textContent="number:"+number;
+        
+         detail.append(userName,mobileNumber);
+         
+         let getData=document.querySelector(".appende");
+         
+         getData.append(detail);
+         getData.style.width = "581px";
+         getData.style.display = "flex";
+         getData.style.overflow = "scroll";
+         getData.style.flexWrap = "wrap";
+         getData.style.backgroundColor ="blanchedalmond";
+         getData.style.margin= "auto";
+         getData.style.margonTop="30px";
+       }
+   </script>
+ </html> 
+       

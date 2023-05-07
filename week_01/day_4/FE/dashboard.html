@@ -1,0 +1,69 @@
+<html>
+  <head>
+      <title>dashboard</title>
+      <style>
+         body{
+           background:url("https://wallpaperboat.com/wp-content/uploads/2019/10/free-website-background-01.jpg");
+         }
+        .dashboard{
+             text-align:center;
+         }
+         .button{
+             margin-left:830px;
+          }
+         .logout{
+             padding:10px 50px 10px 50px;
+             font-size:20px;
+             color:blue;
+             border-radius:5px;
+             border:2px solid blue;
+          }
+             
+      </style>
+  </head>
+  <body>
+      <h1 class="dashboard">** <u>DASHBOARD</u> **</h1>
+      
+      <div class="logindata"></div>
+      
+      <div class="button">
+         <button class="logout">Logout</button>
+      </div>
+      
+  </body>
+  
+  <script>
+     let data=document.querySelector(".logindata");
+     
+     let button=document.querySelector(".logout"); 
+     
+     let storage=JSON.parse(localStorage.getItem("Newdata"));
+     
+     let datadiv=document.createElement("div");
+     
+     let name=document.createElement("div");
+     name.innerText="Name:"+storage.name;
+     
+     let username=document.createElement("div");
+     username.innerText="username:"+storage.username;
+     
+     let email=document.createElement("div");
+     email.innerText="email:"+storage.email;
+     
+     let number=document.createElement("div");
+     number.innerText="number:"+storage.number;
+     
+     datadiv.append(name, username,email,number);
+     data.append(datadiv);
+     data.style.textAlign="center";
+     data.style.fontSize="30px";
+     button.style.marginTop="20px";
+     
+     button.onclick=function(){
+        localStorage.removeItem("Newdata");
+        alert("you are sucessfully logout");
+        window.location.href="loginform.html";
+      }
+          
+  </script>
+</html>

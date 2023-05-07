@@ -1,0 +1,76 @@
+<html>
+   <head>
+      <title>bulb</title>
+      <style>
+         .heading{
+            text-align:center;
+           }
+         .display{
+              display:flex;
+              
+            }
+         .padding{
+              padding:20px 70px 20px 70px;
+            }
+         .on{
+             background-color:green;
+             border:3px solid green;
+             color:white;
+             margin:auto;
+          }
+         .margin{
+            margin-top:30px;
+          }
+         
+         
+       .bulb{
+          padding:90px 90px 90px 90px;
+          border-radius:100px;
+          border:solid black 3px;
+          margin-bottom:50px;
+          margin:auto;
+        }
+      </style>
+   </head>
+   <body>
+      <h1 class="heading"><u>Switch on and off the bulb</u></h1>
+      
+      
+      <div class="display">
+        <div class="bulb">bulb</div>
+      </div>
+      
+      
+      <div class="display">
+         <div class="on padding margin">Switch On</div>
+      </div>
+      
+      
+   </body>
+   <script>
+      let ON=document.querySelector(".on");
+       let bulb=document.querySelector(".bulb");
+       let count=false;
+       
+        ON.onclick = function() {
+           count=!count;
+           if(count){
+                  bulb.style.backgroundColor="yellow";
+                  bulb.style.border="2px yellow solid";
+                  ON.style.backgroundColor="green"; 
+                  ON.style.border="2px green solid";
+                  ON.textContent = "Switch On";
+                  }
+                  else{
+                    bulb.style.backgroundColor="white";
+                    bulb.style.border="solid black 3px";
+                    ON.textContent = "Switch Off";
+                    ON.style.backgroundColor="red"; 
+                    ON.style.border="2px red solid";
+                 }
+          }
+          
+       
+   </script>
+
+</html>
