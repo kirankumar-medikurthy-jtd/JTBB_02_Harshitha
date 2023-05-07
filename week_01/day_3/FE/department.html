@@ -1,0 +1,162 @@
+<html>
+   <head>
+       <title>employee details</title>
+       <style>
+         .main{
+            margin-left:750px;
+            background-color:darksalmon;
+            margin-right:730px;
+            padding-left:10px;
+            padding-bottom:30px;
+            text-align:center;
+            
+          }
+         .input{
+           padding:10px 20px 10px 10px;
+           margin-top:20px;
+           border:solid 3px deeppink;
+           color:deeppink;
+           font-size:15px;
+         }
+         .input1{
+           padding:10px 20px 10px 10px;
+           margin-top:20px;
+           border:solid 3px deeppink;
+           color:deeppink;
+           font-size:15px;
+         }
+         .input2{
+           padding:10px 20px 10px 10px;
+           margin-top:20px;
+           border:solid 3px deeppink;
+           color:deeppink;
+           font-size:15px;
+         }
+         .input3{
+           padding:10px 20px 10px 10px;
+           margin-top:20px;
+           border:solid 3px deeppink;
+           color:deeppink;
+           font-size:15px;
+         }
+         .button{
+            margin-top:20px;
+            padding:10px 40px 10px 40px;
+            border:solid 3px deeppink;
+            border-radius:5px;
+            font-size:15px;
+          }
+        .tabledata{
+            margin-left:680px;
+            margin-top:30px;
+          }
+        th,td{
+         border:1px solid deeppink;
+         margin-right:10px;
+         
+         }
+       </style>
+   </head>
+   <body>
+      <div class="main">
+        <div>
+           <input  class="input" type="text" placeholder="Employee Name"/>
+        </div>
+        <div>
+           <input  class="input1" typr="text" placeholder="Department"/>
+        </div>
+        <div>
+           <input  class="input2" typr="number" placeholder="Sale-1"/>
+        </div>
+        <div>
+           <input class="input3" typr="number" placeholder="Sale-2"/>
+        </div>
+        <button class="button">SUBMIT</button>
+      </div>
+      <div class="tabledata"></div>
+   </body>
+   
+   
+   <script>
+      let button=document.querySelector(".button");
+      
+      let table=document.createElement("table");
+      
+      let tableRow=document.createElement("tr");
+      
+      let tableHead=document.createElement("th");
+      
+      tableHead.innerText="employeeName";
+      
+      let tableHead1=document.createElement("th");
+      
+      tableHead1.innerText="departmentName";
+      
+      let tableHead2=document.createElement("th");
+      
+      tableHead2.innerText="sales1";
+      
+      let tableHead3=document.createElement("th");
+      
+      tableHead3.innerText="sales2";
+      
+      let tableHead4=document.createElement("th");
+      
+      tableHead4.innerText="average";
+      
+      tableRow.append(tableHead,tableHead1,tableHead2,tableHead3,tableHead4);
+      
+      table.appendChild(tableRow);
+      
+      let tabledata=document.querySelector(".tabledata");
+      
+      tabledata.appendChild(table);
+      
+      button.onclick=function(){
+      
+          let employee=document.querySelector(".input").value;
+          
+          let department=document.querySelector(".input1").value;
+          
+          let sales1=document.querySelector(".input2").value;
+          
+          let sales2=document.querySelector(".input3").value;
+          
+          let average=(Number(sales1)+Number(sales2))/2;
+          
+          let tableRow=document.createElement("tr");
+          
+          let tableData=document.createElement("td");
+          
+          tableData.innerText=employee;
+          
+          let tableData1=document.createElement("td");
+          
+          tableData1.innerText=department;
+          
+          let tableData2=document.createElement("td");
+          
+          tableData2.innerText=sales1;
+          
+          let tableData3=document.createElement("td");
+          
+          tableData3.innerText=sales2;
+          
+          let tableData4=document.createElement("td");
+          
+          tableData4.innerText=average;
+          
+          tableRow.append(tableData,tableData1,tableData2,tableData3,tableData4);
+          
+          table.appendChild(tableRow);
+          
+          let tabledata=document.querySelector(".tabledata");
+      
+          tabledata.appendChild(table);
+          
+          console.log(employee,department,sales1,sales2,average);
+          
+       }
+   </script>
+   
+</html>

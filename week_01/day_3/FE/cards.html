@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<title>Cards play</title>
+	</head>
+	<style>
+		#heading{
+			text-align:center;
+		}
+		
+		button{
+			padding:20 40px 20px 40px;
+			background-color:hotpink;
+			color:white;
+			border:solid 2px hotpink;
+			border-radius:10px;
+			font-size:20px;
+			margin-left:800px;
+			margin-top:30px;
+			
+		}
+		
+		#card{                                                                        
+		        width:900px;
+			margin-left:550px;
+			display:flex;
+			flex-wrap:wrap;	
+		}
+		.mainclass{
+		        background-color:greenyellow;
+			padding: 20px;
+			margin: 15px;
+		}
+	</style>
+	<body>
+		<div class="main">
+		<h1 id="heading"><u><b>Playing with Cards</b></u></h1>
+		<div id="button">
+		<button onClick="clickMe()"><b>click Me</b></button>
+		</div>
+		<div id="card"></div>
+		</div>
+	</body>
+	<script>
+		        function clickMe(){
+				let button = document.getElementById("button");
+				button.innerHTML = "";
+				let cards = document.getElementById("card");
+				for(let i=1; i<=60; i++){
+					let card = smallCards(i);
+					cards.appendChild(card);
+					
+				}
+				
+			}
+			function smallCards(cardNumber) {
+				let card = document.createElement("div");
+				card.innerHTML = cardNumber;
+				card.setAttribute("onclick", `addingNumbers(${cardNumber})`)
+				card.setAttribute("class","mainclass")
+				return card;
+			}
+			function addingNumbers(digits){
+				let cardNum=document.getElementById("heading");
+				heading.innerText="Playing with Cards: "+ digits ;
+			}
+			
+		
+	</script>
+</html>
+
+
+
