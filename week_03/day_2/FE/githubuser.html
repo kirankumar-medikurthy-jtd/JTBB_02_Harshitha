@@ -1,0 +1,97 @@
+<html>
+   <head>
+       <title>one user</title>
+       <style>
+          .btn{
+             padding:10px 30px 10px 30px;
+             background-color:black;
+             color:white;
+             margin-left:300px;
+             font-size:20px;
+             border-radius:10px;
+             margin-top:20px;
+           }
+         .btn:hover{
+             background-color:crimson;
+             color:white;
+             font-size:23px;
+             border:2px solid crimson;
+             color:yellow;
+           }
+        .image{
+           width:200px;
+           text-align:center;
+           margin-left:20px;
+           margin-bottom:20px;
+           
+          }
+       .image:hover{
+           width:230px;
+          }
+        .details{
+           background-color:black;
+           width:300px;
+           padding:50px 30px 50px 30px;
+           text-align:center;
+           color:aqua;
+           margin-left:600px;
+           border-radius:10px;
+           
+         }
+       .details:hover{
+           background-color:crimson;
+           color:yellow;
+         }
+       .name{
+          margin-bottom:5px;
+         }
+       .name:hover{
+          font-size:25px;
+         }
+       .number:hover{
+           font-size:25px;
+         }
+           
+          
+       </style>
+   </head>
+   <body>
+     <div>
+        <button class="btn" onclick="back()">Go Back</div>
+     </div>
+     <div class="details"></div>
+     <div class="back"></div>
+   </body>
+   <script>
+       let data=document.querySelector(".details");
+       let storage=JSON.parse(localStorage.getItem("oneuser"));
+       let divtag=document.createElement("div");
+       
+       let image = document.createElement("img");
+       image.setAttribute("src",storage.avatar_url);
+       image.setAttribute("class","image");
+       
+       let number = document.createElement("div");
+       number.innerText =storage.id;
+       number.setAttribute("class","number");
+       
+       let name = document.createElement("div");
+       name.innerText = storage.login;
+       name.setAttribute("class","name")
+       
+       divtag.append(image,name,number);
+       data.append(divtag);
+       
+       let button=document.querySelector(".btn");
+       
+       
+       function back(){
+              window.location.href="githubusers.html";
+           }
+           
+           
+       
+       
+   </script>
+</html>
+
