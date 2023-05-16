@@ -1,0 +1,220 @@
+<html>
+   <head>
+       <title>users page</title>
+       <style>
+        .navimg{
+           width:50px;
+           border-radius:1000px;
+          }
+        .main{
+           background-color:black;
+           padding:10px 10px 10px 10px;
+           border-radius:20px;
+          }
+        .imagediv{
+           background-color:white;
+           width:50px;
+           border-radius:30px;
+           margin-left:30px;
+           margin-top:10px;
+          }
+        .textdiv{
+           display:flex;
+           margin-left:800px;
+           margin-top:-50px;
+           
+          }
+        .color{
+           color:white;
+           margin-left:200px;
+           font-size:20px;
+           text-decoration:none;
+          }
+        .color:hover{
+             color:yellow;
+             font-size:21px;
+           }
+        .search{
+            margin-left:200px;
+            padding:10px 20px 10px 10px;
+            margin-top:20px;
+            border:2px solid black;
+            border-radius:5px;
+            margin-right:20px;
+           }
+        .button{
+           padding:5px 15px 5px 5px;
+           border-radius:5px;
+          }
+        .image{
+           width:200px;
+           text-align:center;
+           margin-left:20px;
+           
+          }
+       .image:hover{
+           width:230px;
+           
+          }
+        
+        .card{
+             border-radius:20px;
+             background-color:black;
+             width:400px;
+             padding:30px 0px 30px 0px;
+             margin-top:20px;
+             margin-left:50px;
+             text-align:center;
+             color:aqua;
+          }
+        .card:hover{
+             background-color:crimson;
+             color:yellow;
+          }
+       .name{
+            margin-top:20px;
+          }
+       .name:hover{
+            font-size:25px;
+          }
+       .display{
+            display:flex;
+            flex-wrap:wrap;
+          } 
+       .click{
+             border-radius:20px;
+             background-color:black;
+             width:400px;
+             padding:30px 0px 30px 0px;
+             margin-top:20px;
+             margin-left:100px;
+             text-align:center;
+             color:aqua;
+          }
+        .click:hover{
+             background-color:crimson;
+             color:yellow;
+             width:450px;
+          }
+        .number:hover{
+             font-size:25px;
+          }
+           
+       </style>
+   </head>
+   <body>
+     <div class="main">
+        <div class="imagediv">
+           <a href="githubhomepage.html"><img class="navimg" src="http://pngimg.com/uploads/github/github_PNG36.png" alt=""></a>
+        </div>
+        
+        <div class="textdiv">
+           <div>
+              <a class="color" href="githubusers.html"><p class="user color">USERS</p></a>
+           </div>
+           <div>
+              <a class="color" href="githubrepos.html"><p class="repositeries color">REPOSITERIES</p></a>
+           </div>
+           <div>
+              <a class="color" href="githubtopic.html"><p class="topics color">TOPIC</p></a>
+           </div>
+        </div>
+     </div>
+        <input  class="search" type="text" placeholder="users name">
+        <button  class="button" onclick="enter()">serach</button>
+        
+        <div class="data"</div>
+   </body>
+   
+     <script>
+        async function fetchData(url){
+                const response = await fetch(url);
+                const jsonData = await response.json()
+                return jsonData
+          }
+          let result=[];
+          
+       async function enter(){
+               let search=document.querySelector(".search").value;
+               let data = document.querySelector(".data");
+               data.style.fontSize="30px";
+               data.innerText="Loading........"
+               data.setAttribute("class","display");
+               let storage=await fetchData(`https://api.github.com/search/users?q=${search}`);
+              
+               console.log(storage);
+               
+                let userdata=storage["items"];
+               result=storage["items"];  
+               data.innerText="";
+               if(userdata.length!==0){
+               
+                   for(let i=0;i<userdata.length;i++){
+                         let div=document.createElement("div");
+                         div.setAttribute("class","card");
+                         
+                         let image = document.createElement("img");
+                         image.setAttribute("src", userdata[i].avatar_url);
+                         image.setAttribute("class","image");
+                         
+                         let number = document.createElement("div");
+                         number.innerText = userdata[i].id;
+                         number.setAttribute("class","number");
+                         
+                         let name = document.createElement("div");
+                         name.innerText = userdata[i].login;
+                         name.setAttribute("class","name");
+                         
+                         div.setAttribute("onclick",`oneuser(${i})`);
+                         
+                         div.append(image,name,number);
+                        
+                         
+                        
+                         data.append(div);
+                         
+                         
+                    }
+               }
+              
+          }
+         function oneuser(index){
+                   localStorage.setItem("oneuser",JSON.stringify(result[index]));
+                   window.location.href="githubuser.html";
+                   
+                   
+                   
+                   //console.log(result[index]);  
+                   //let div=document.createElement("div");
+                   //div.setAttribute("class","click");
+                   
+                   
+                   //let image = document.createElement("img");
+                   //image.setAttribute("src", result[index].avatar_url);
+                   //image.setAttribute("class","image");
+                  
+                         
+                   //let number = document.createElement("div");
+                   //number.innerText =result[index].id;
+                   //number.setAttribute("class","number");
+                         
+                   //let name = document.createElement("div");
+                   //name.innerText = result[index].login;
+                   //name.setAttribute("class","name");
+                         
+                   //div.setAttribute("onclick",`oneuser(${result[index]})`);
+                         
+                   //div.append(image,name,number);
+                   
+                       
+                   //results.setAttribute("class","section2");
+                   //data.innerText="";
+                   //document.body.append(div);     
+                         
+                    
+               }
+        </script>
+                   
+     
+   
+</html>
